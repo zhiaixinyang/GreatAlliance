@@ -26,11 +26,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.RegisterActivity"
+        <activity android:name=".ui.register.RegisterActivity"
             android:launchMode="singleTask"/>
-        <activity android:name=".ui.LoginActivity"
+        <activity android:name=".ui.register.LoginActivity"
             android:launchMode="singleTask"/>
-        <activity android:name=".ui.ClipImageActivity"
+        <activity android:name=".ui.register.ClipImageActivity"
             android:launchMode="singleTask"/>
     </application>
 

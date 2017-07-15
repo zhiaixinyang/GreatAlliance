@@ -308,7 +308,7 @@ public class ClipZoomImageView extends ImageView implements
 	/**
 	 * 垂直方向与View的边�?
 	 */
-	// private int getHVerticalPadding();
+	// my int getHVerticalPadding();
 
 	@Override
 	public void onGlobalLayout() {

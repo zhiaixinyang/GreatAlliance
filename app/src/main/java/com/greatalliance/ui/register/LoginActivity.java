@@ -1,9 +1,8 @@
-package com.greatalliance.ui;
+package com.greatalliance.ui.register;
 
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.GravityCompat;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -11,22 +10,20 @@ import android.widget.TextView;
 import com.avos.avoscloud.AVException;
 import com.avos.avoscloud.AVUser;
 import com.avos.avoscloud.LogInCallback;
-import com.greatalliance.GreatAllianceApplication;
 import com.greatalliance.R;
 import com.greatalliance.base.BaseActivity;
 import com.greatalliance.base.Constant;
 import com.greatalliance.model.User;
+import com.greatalliance.ui.MainActivity;
 import com.greatalliance.utils.AppUtils;
 import com.greatalliance.utils.ScreenUtils;
 import com.greatalliance.utils.SelectorFactory;
 import com.greatalliance.utils.SharedPreferencesUtils;
 import com.greatalliance.utils.StringUtils;
 import com.greatalliance.utils.ToastUtils;
-import com.greatalliance.utils.WaitNetPopupWindowUtils;
 import com.greatalliance.widget.CircleImageView;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**

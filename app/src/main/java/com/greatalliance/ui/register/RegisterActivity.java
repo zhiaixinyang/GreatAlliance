@@ -1,10 +1,11 @@
-package com.greatalliance.ui;
+package com.greatalliance.ui.register;
 
 import android.Manifest;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.support.annotation.MainThread;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
@@ -17,11 +18,11 @@ import com.avos.avoscloud.AVFile;
 import com.avos.avoscloud.AVUser;
 import com.avos.avoscloud.LogInCallback;
 import com.avos.avoscloud.SignUpCallback;
-import com.greatalliance.GreatAllianceApplication;
 import com.greatalliance.R;
 import com.greatalliance.base.BaseActivity;
 import com.greatalliance.base.Constant;
 import com.greatalliance.model.User;
+import com.greatalliance.ui.MainActivity;
 import com.greatalliance.utils.AlbumUtils;
 import com.greatalliance.utils.AppUtils;
 import com.greatalliance.utils.FileUtils;
@@ -150,6 +151,8 @@ public class RegisterActivity extends BaseActivity {
                                         if (e==null){
                                             waitNetPopupWindowUtils.hideWaitNetPopupWindow(RegisterActivity.this);
                                             SharedPreferencesUtils.getInstance().putInt(Constant.ACCOUNT_LOGIN_KEY,1);
+                                            Intent toMain=new Intent(RegisterActivity.this, MainActivity.class);
+                                            startActivity(toMain);
                                             finish();
                                         }else{
                                             waitNetPopupWindowUtils.hideWaitNetPopupWindow(RegisterActivity.this);

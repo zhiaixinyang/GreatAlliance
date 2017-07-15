@@ -1,4 +1,4 @@
-package com.greatalliance.ui;
+package com.greatalliance.ui.register;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
