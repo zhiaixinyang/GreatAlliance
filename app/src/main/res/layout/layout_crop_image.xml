@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+    <include
+        layout="@layout/common_toolbar_no_shadow"
+        android:id="@+id/toolbar"/>
+
+    <com.greatalliance.widget.clip.ClipImageLayout
+        android:id="@+id/clipImageLayout"
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+
+        <TextView
+            android:id="@+id/btn_ok"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/margin_activity_clip"
+            android:layout_marginRight="@dimen/margin_activity_clip"
+            android:layout_marginLeft="@dimen/margin_activity_clip"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:text="确定" />
+
+        <TextView
+            android:id="@+id/btn_cancle"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:layout_marginBottom="@dimen/margin_activity_clip"
+            android:layout_marginRight="@dimen/margin_activity_clip"
+            android:layout_weight="1"
+            android:textSize="16sp"
+            android:text="取消" />
+    </LinearLayout>
+</RelativeLayout>
