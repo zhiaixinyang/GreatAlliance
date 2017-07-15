@@ -14,6 +14,7 @@ import com.greatalliance.ui.register.LoginActivity;
 import com.greatalliance.ui.share.ShareFragment;
 import com.greatalliance.ui.shop.ShopFragment;
 import com.greatalliance.utils.SharedPreferencesUtils;
+
 import butterknife.BindView;
 
 public class MainActivity extends BaseActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
@@ -30,6 +31,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
 
     @Override
     public void initDatas() {
+
         if (SharedPreferencesUtils.getInstance().getInt(Constant.ACCOUNT_LOGIN_KEY)==1){
 
         }else{

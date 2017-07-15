@@ -6,9 +6,7 @@
     android:layout_height="match_parent">
     <include
         android:id="@+id/toolbar"
-        layout="@layout/common_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        layout="@layout/common_toolbar"/>
     <FrameLayout
         android:id="@+id/frag_content"
         android:layout_above="@+id/navigation"

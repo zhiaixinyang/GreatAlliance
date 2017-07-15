@@ -12,13 +12,13 @@ import android.widget.TextView;
  * Created by MBENBEN on 2017/7/15.
  */
 
-public abstract class AbsNavigation<P extends AbsNavigation.Builder.NavigationParams> implements INavigation {
+public abstract class AbsNavigationBar<P extends AbsNavigationBar.Builder.NavigationParams> implements INavigation {
 
     private P params;
 
     private View view;
 
-    public AbsNavigation(P params) {
+    public AbsNavigationBar(P params) {
         this.params = params;
         createAndBind();
     }
@@ -95,7 +95,7 @@ public abstract class AbsNavigation<P extends AbsNavigation.Builder.NavigationPa
     public abstract static class Builder {
 
         // 构建导航条方法
-        public abstract AbsNavigation create();
+        public abstract AbsNavigationBar create();
 
         // 默认的配置参数
         public static class NavigationParams {

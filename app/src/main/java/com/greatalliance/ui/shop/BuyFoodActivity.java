@@ -2,6 +2,7 @@ package com.greatalliance.ui.shop;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -11,7 +12,10 @@ import com.greatalliance.R;
 import com.greatalliance.base.BaseActivity;
 import com.greatalliance.base.Constant;
 import com.greatalliance.model.bean.ShopBean;
+import com.greatalliance.utils.AppUtils;
 import com.greatalliance.utils.GlideUtils;
+import com.greatalliance.utils.ScreenUtils;
+import com.greatalliance.utils.SelectorFactory;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -42,7 +46,15 @@ public class BuyFoodActivity extends BaseActivity {
         Intent fromBuyFrag = getIntent();
         if (fromBuyFrag != null) {
             shopBean = (ShopBean) fromBuyFrag.getSerializableExtra(Constant.INTENT_BUY_FOOD);
+            if (shopBean!=null) {
+                tvBuyFoodName.setText(shopBean.getFoodName());
+                GlideUtils.load(ivBuyFood, shopBean.getFoodPhotoPath());
+            }
+        }else{
+            tvBuyFoodName.setText("获取购买数据失败！");
+            GlideUtils.load(ivBuyFood,R.drawable.icon_logo);
         }
+
     }
 
     @Override
@@ -52,6 +64,14 @@ public class BuyFoodActivity extends BaseActivity {
             tvBuyFoodName.setText(shopBean.getFoodName());
             GlideUtils.load(ivBuyFood, shopBean.getFoodPhotoPath());
         }
+
+        btnAddLocation.setBackground(SelectorFactory.newShapeSelector()
+                .setCornerRadius(ScreenUtils.dp2px(20))
+                .setDefaultStrokeColor(ContextCompat.getColor(
+                        AppUtils.getAppContext(),
+                        R.color.main_color))
+                .setStrokeWidth(ScreenUtils.dp2px(1))
+                .create());
     }
 
 
@@ -60,6 +80,9 @@ public class BuyFoodActivity extends BaseActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_add_location:
+                Intent toLocation=new Intent(BuyFoodActivity.this,LocationActivity.class);
+                toLocation.putExtra(Constant.INTENT_BUY_FOOD,shopBean);
+                startActivity(toLocation);
                 break;
             case R.id.btn_buy:
                 break;

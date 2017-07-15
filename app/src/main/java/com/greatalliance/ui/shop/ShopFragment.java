@@ -1,5 +1,6 @@
 package com.greatalliance.ui.shop;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import com.greatalliance.R;
 import com.greatalliance.base.BaseFragment;
 import com.greatalliance.base.CommonAdapter;
+import com.greatalliance.base.Constant;
 import com.greatalliance.base.ViewHolder;
 import com.greatalliance.model.bean.ShopBean;
 import com.greatalliance.utils.AppUtils;
@@ -71,7 +73,7 @@ public class ShopFragment extends BaseFragment {
         rlvShop.setAdapter(new CommonAdapter<ShopBean>(AppUtils.getAppContext(),
                 R.layout.item_shop,data) {
             @Override
-            public void convert(ViewHolder holder, ShopBean shopBean) {
+            public void convert(ViewHolder holder, final ShopBean shopBean) {
                 holder.setText(R.id.tv_content,shopBean.getFoodContent());
                 holder.setText(R.id.tv_money,shopBean.getFoodMoeny());
                 holder.setText(R.id.tv_name,shopBean.getFoodName());
@@ -79,7 +81,9 @@ public class ShopFragment extends BaseFragment {
                 holder.getView(R.id.btn_buy).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
+                        Intent toBuy=new Intent(AppUtils.getAppContext(),BuyFoodActivity.class);
+                        toBuy.putExtra(Constant.INTENT_BUY_FOOD,shopBean);
+                        startActivity(toBuy);
                     }
                 });
             }

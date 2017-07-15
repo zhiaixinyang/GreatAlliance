@@ -32,6 +32,10 @@
             android:launchMode="singleTask"/>
         <activity android:name=".ui.register.ClipImageActivity"
             android:launchMode="singleTask"/>
+        <activity android:name=".ui.shop.BuyFoodActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".ui.shop.LocationActivity"
+            android:launchMode="singleTask"/>
     </application>
 
 </manifest>

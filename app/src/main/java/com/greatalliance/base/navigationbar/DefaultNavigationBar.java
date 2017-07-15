@@ -10,24 +10,22 @@ import com.greatalliance.R;
  * Created by MBENBEN on 2017/7/15.
  */
 
-public class DefaultNavigation<D extends AbsNavigation.Builder.NavigationParams> extends
-        AbsNavigation<DefaultNavigation.Builder.DefaultNavigationParams> {
-    public DefaultNavigation(Builder.DefaultNavigationParams params) {
+public class DefaultNavigationBar<D extends AbsNavigationBar.Builder.NavigationParams> extends
+        AbsNavigationBar<DefaultNavigationBar.Builder.DefaultNavigationParams> {
+    public DefaultNavigationBar(Builder.DefaultNavigationParams params) {
         super(params);
     }
 
     @Override
     public void applyView() {
         // 给我们的导航条绑定资源
-//        setImageResource(R.id.iv_left, getParams().leftIconRes);
-//        setImageResource(R.id.iv_right, getParams().rightIconRes);
-//        setImageResource(R.id.iv_right_icon, getParams().textRightIconRes);
-//        setText(R.id.title_tv, getParams().title);
-//        setText(R.id.left_tv, getParams().leftTv);
-//        setText(R.id.right_tv, getParams().rightTv);
-//        setBackgroundColor(R.id.title_bar, getParams().bgColor);
-//        setOnClickListener(R.id.left_ll, getParams().leftOnClickListener);
-//        setOnClickListener(R.id.right_ll, getParams().rightOnClickListener);
+        setImageResource(R.id.iv_left, getParams().leftIconRes);
+        setImageResource(R.id.iv_right, getParams().rightIconRes);
+        setText(R.id.tv_title, getParams().title);
+        setText(R.id.tv_left, getParams().leftTv);
+        setText(R.id.tv_right, getParams().rightTv);
+        setOnClickListener(R.id.iv_left, getParams().leftOnClickListener);
+        setOnClickListener(R.id.iv_right, getParams().leftOnClickListener);
     }
 
     @Override
@@ -37,7 +35,7 @@ public class DefaultNavigation<D extends AbsNavigation.Builder.NavigationParams>
     }
 
     // 构建导航条类
-    public static class Builder extends AbsNavigation.Builder {
+    public static class Builder extends AbsNavigationBar.Builder {
         private DefaultNavigationParams params;
 
         public Builder(Context context, ViewGroup parent) {
@@ -85,8 +83,8 @@ public class DefaultNavigation<D extends AbsNavigation.Builder.NavigationParams>
         }
 
         @Override
-        public DefaultNavigation<NavigationParams> create() {
-            DefaultNavigation<NavigationParams> navigation = new DefaultNavigation<NavigationParams>(params);
+        public DefaultNavigationBar<NavigationParams> create() {
+            DefaultNavigationBar<NavigationParams> navigation = new DefaultNavigationBar<NavigationParams>(params);
             return navigation;
         }
 
