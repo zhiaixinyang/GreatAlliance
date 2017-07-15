@@ -34,7 +34,9 @@ import com.greatalliance.utils.TransWindowUtils;
 import com.greatalliance.utils.WaitNetPopupWindowUtils;
 
 import butterknife.ButterKnife;
-
+/**
+ * Created by MBENBEN on 2017/7/9.
+ */
 public abstract class BaseActivity extends AppCompatActivity {
 
     protected Context mContext;

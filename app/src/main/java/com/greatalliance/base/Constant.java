@@ -39,6 +39,9 @@ public class Constant {
 
     public static final String RETURN_CLIP_PHOTO="return_clip_photo";
 
+    public static final String INTENT_BUY_FOOD="intent_buy_food";
+
+
     public static final String TO_CLIPACTIVITY="to_clipactivity";
 
     public static final String ACCOUNT_LOGIN_KEY="account_login_key";

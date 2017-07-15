@@ -1,4 +1,4 @@
-package com.greatalliance.model;
+package com.greatalliance.model.leancloud;
 
 import com.avos.avoscloud.AVFile;
 import com.avos.avoscloud.AVUser;

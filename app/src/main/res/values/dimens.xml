@@ -12,6 +12,10 @@
     <dimen name="et_height_activity_register">40dp</dimen>
     <dimen name="size_activity_register">16sp</dimen>
     <dimen name="margin_activity_clip">10dp</dimen>
+    <dimen name="margin_item_shop">10dp</dimen>
+    <dimen name="margin_activity_buy_food">20dp</dimen>
+    <dimen name="size_activity_buy_food">18sp</dimen>
+    <dimen name="margin_activity_buy_food_text">10dp</dimen>
 
 
 </resources>

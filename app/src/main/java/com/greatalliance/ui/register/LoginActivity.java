@@ -13,7 +13,7 @@ import com.avos.avoscloud.LogInCallback;
 import com.greatalliance.R;
 import com.greatalliance.base.BaseActivity;
 import com.greatalliance.base.Constant;
-import com.greatalliance.model.User;
+import com.greatalliance.model.leancloud.User;
 import com.greatalliance.ui.MainActivity;
 import com.greatalliance.utils.AppUtils;
 import com.greatalliance.utils.ScreenUtils;

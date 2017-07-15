@@ -5,7 +5,9 @@ import android.app.Application;
 import android.content.Context;
 
 import com.avos.avoscloud.AVOSCloud;
+import com.avos.avoscloud.AVObject;
 import com.greatalliance.base.Constant;
+import com.greatalliance.model.leancloud.LOrderMessage;
 import com.greatalliance.utils.AppUtils;
 import com.greatalliance.utils.SharedPreferencesUtils;
 
@@ -31,6 +33,7 @@ public class GreatAllianceApplication extends Application {
 
     private void init() {
         AVOSCloud.initialize(this, Constant.LEAN_CLOUD_APP_ID, Constant.LEAN_CLOUD_APP_KEY);
+        AVObject.registerSubclass(LOrderMessage.class);
     }
 
     public static GreatAllianceApplication getInstance() {
