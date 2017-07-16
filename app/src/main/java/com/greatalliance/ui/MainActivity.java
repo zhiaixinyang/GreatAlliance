@@ -1,9 +1,12 @@
 package com.greatalliance.ui;
 
 import android.content.Intent;
+import android.graphics.PixelFormat;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.MenuItem;
 import com.greatalliance.R;
 import com.greatalliance.base.BaseActivity;
@@ -23,6 +26,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
     private ShopFragment shopFragment;
     private ShareFragment shareFragment;
     private MyFragment myFragment;
+    private FragmentManager fragmentManager;
 
     @Override
     public int getLayoutId() {
@@ -31,7 +35,6 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
 
     @Override
     public void initDatas() {
-
         if (SharedPreferencesUtils.getInstance().getInt(Constant.ACCOUNT_LOGIN_KEY)==1){
 
         }else{
@@ -49,7 +52,10 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
         shopFragment=ShopFragment.newInstance();
         myFragment=MyFragment.newInstance();
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.frag_content,mapFragment).commit();
+        fragmentManager=getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .add(R.id.frag_content,mapFragment)
+                .commit();
     }
 
 
@@ -61,28 +67,83 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
                 if (mapFragment==null) {
                     mapFragment = MapFragment.newInstance();
                 }
-                transaction.replace(R.id.frag_content,mapFragment);
+                if (!mapFragment.isAdded()) {
+                    transaction.add(R.id.frag_content, mapFragment)
+                            //为什么，add完又show...因为测试时发现，只add，存在add显示为空白
+                            .show(mapFragment)
+                            .hide(shopFragment)
+                            .hide(shareFragment)
+                            .hide(myFragment)
+                            .commit();
+                }else{
+                    transaction.show(mapFragment)
+                            .hide(shopFragment)
+                            .hide(shareFragment)
+                            .hide(myFragment)
+                            .commit();
+                }
                 break;
             case R.id.menu_shop:
                 if (shopFragment==null){
                     shopFragment=ShopFragment.newInstance();
                 }
-                transaction.replace(R.id.frag_content,shopFragment);
+                if (!shopFragment.isAdded()) {
+                    transaction.add(R.id.frag_content, shopFragment)
+                            .show(shopFragment)
+                            .hide(mapFragment)
+                            .hide(shareFragment)
+                            .hide(myFragment)
+                            .commit();
+                }else{
+                    transaction.show(shopFragment)
+                            .hide(mapFragment)
+                            .hide(shareFragment)
+                            .hide(myFragment)
+                            .commit();
+                }
                 break;
             case R.id.menu_share:
                 if (shareFragment==null){
                     shareFragment=ShareFragment.newInstance();
                 }
-                transaction.replace(R.id.frag_content,shareFragment);
+                if (!shareFragment.isAdded()) {
+                    transaction.add(R.id.frag_content, shareFragment)
+                            .show(shareFragment)
+                            .hide(mapFragment)
+                            .hide(shopFragment)
+                            .hide(myFragment)
+                            .commit();
+                }else{
+                    transaction.show(shareFragment)
+                            .hide(mapFragment)
+                            .hide(shopFragment)
+                            .hide(myFragment)
+                            .commit();
+                }
                 break;
             case R.id.menu_my:
                 if (myFragment==null){
                     myFragment=MyFragment.newInstance();
                 }
-                transaction.replace(R.id.frag_content,myFragment);
+                if (!myFragment.isAdded()) {
+                    transaction.add(R.id.frag_content, myFragment)
+                            .show(myFragment)
+                            .hide(mapFragment)
+                            .hide(shopFragment)
+                            .hide(shareFragment)
+                            .commit();
+                    fragmentManager.executePendingTransactions();
+
+
+                }else{
+                    transaction.show(myFragment)
+                            .hide(mapFragment)
+                            .hide(shopFragment)
+                            .hide(shareFragment)
+                            .commit();
+                }
                 break;
         }
-        transaction.commit();
         return true;
     }
 }

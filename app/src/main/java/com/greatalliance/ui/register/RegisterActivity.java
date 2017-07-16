@@ -68,7 +68,6 @@ public class RegisterActivity extends BaseActivity {
 
         switch (requestCode) {
             case Constant.CROP_RESULT_CODE:
-                Log.d("aaa","sad");
                 String path = data.getStringExtra(Constant.RETURN_CLIP_PHOTO);
                 bmAvatar = BitmapFactory.decodeFile(path);
                 ivAvatar.setImageBitmap(bmAvatar);
