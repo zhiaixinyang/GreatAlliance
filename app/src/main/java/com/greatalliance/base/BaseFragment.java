@@ -26,7 +26,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import butterknife.ButterKnife;
-
+/**
+ * Created by MBENBEN on 2017/7/9.
+ */
 public abstract class BaseFragment extends Fragment {
 
     protected View parentView;

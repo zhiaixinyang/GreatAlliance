@@ -1,11 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<com.greatalliance.widget.StickyNavLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_height="match_parent">
-    <TextView
+    <RelativeLayout
+        android:id="@+id/layout_one"
         android:layout_width="match_parent"
-        android:text="我的Fragment"
-        android:textSize="20sp"
-        android:gravity="center"
+        android:layout_height="wrap_content">
+        <com.greatalliance.widget.CircleImageView
+            android:id="@+id/iv_avatar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_frag_my"
+            android:layout_below="@+id/toolbar"
+            android:src="@drawable/icon_example"
+            android:layout_width="@dimen/frag_my_avatar_wh"
+            android:layout_height="@dimen/frag_my_avatar_wh" />
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/iv_avatar"
+            android:text="我的昵称"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_marginTop="@dimen/margin_frag_my"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/tv_name"
+            android:text="个性签名"
+            android:textColor="@color/gray_black"
+            android:textSize="@dimen/size_frag_my"
+            android:layout_margin="@dimen/margin_frag_my"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_below="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/margin_frag_my"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_my_followers_num"
+                android:text="99"
+                android:textStyle="bold"
+                android:layout_marginRight="5dp"
+                android:textSize="@dimen/size_frag_my"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="FOLLOWERS"
+                android:textSize="@dimen/size_frag_my"
+                android:textColor="@color/gray_black"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <ImageView
+            android:src="@drawable/btn_edit"
+            android:layout_alignTop="@+id/iv_avatar"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/margin_frag_my"
+            android:layout_width="@dimen/frag_my_btn_edit_wh"
+            android:layout_height="@dimen/frag_my_btn_edit_wh" />
+    </RelativeLayout>
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabLayout"
+        app:tabTextColor="@color/gray_black"
+        app:tabSelectedTextColor="@color/black"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        app:tabTextAppearance="@style/frag_my_tablyout_style"
+        android:layout_height="40dp"/>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
         android:layout_height="match_parent" />
-</LinearLayout>
+</com.greatalliance.widget.StickyNavLayout>
+

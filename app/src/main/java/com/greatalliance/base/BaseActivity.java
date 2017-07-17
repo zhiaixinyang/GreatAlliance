@@ -17,7 +17,7 @@ package com.greatalliance.base;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.os.Build;
+import android.graphics.PixelFormat;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -30,11 +30,13 @@ import com.greatalliance.GreatAllianceApplication;
 import com.greatalliance.R;
 import com.greatalliance.utils.SharedPreferencesUtils;
 import com.greatalliance.utils.StatusBarCompat;
-import com.greatalliance.utils.TransWindowUtils;
+import com.greatalliance.utils.StatusBarUtils;
 import com.greatalliance.utils.WaitNetPopupWindowUtils;
 
 import butterknife.ButterKnife;
-
+/**
+ * Created by MBENBEN on 2017/7/9.
+ */
 public abstract class BaseActivity extends AppCompatActivity {
 
     protected Context mContext;
@@ -45,21 +47,23 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getWindow().setFormat(PixelFormat.TRANSLUCENT);
+
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
         ButterKnife.bind(this);
-        TransWindowUtils.setTransWindow(this);
-        if (statusBarColor == 0) {
-            statusBarView = StatusBarCompat.compat(this, ContextCompat.getColor(this, R.color.colorPrimaryDark));
-        } else if (statusBarColor != -1) {
-            statusBarView = StatusBarCompat.compat(this, statusBarColor);
-        }
+        setStatusBarColor();
+
         mContext = this;
         waitNetPopupWindowUtils=new WaitNetPopupWindowUtils();
         GreatAllianceApplication.getInstance().addActivity(this);
         initDatas();
         configViews();
         mNowMode = SharedPreferencesUtils.getInstance().getBoolean(Constant.ISNIGHT);
+    }
+
+    private void setStatusBarColor() {
+        StatusBarUtils.setColorNoTranslucent(this,ContextCompat.getColor(this,R.color.white));
     }
 
     @Override

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/common_toolbar"/>
+    <RelativeLayout
+        android:id="@+id/panel_buy_food"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="@dimen/margin_activity_buy_food"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/iv_buy_food"
+            android:layout_width="240dp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="160dp" />
+        <TextView
+            android:id="@+id/tv_buy_food_name"
+            android:layout_width="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="将要购买的外卖的名称"
+            android:layout_below="@+id/iv_buy_food"
+            android:textColor="@color/black"
+            android:layout_marginRight="@dimen/margin_activity_buy_food"
+            android:layout_marginLeft="@dimen/margin_activity_buy_food"
+            android:layout_marginBottom="@dimen/margin_activity_buy_food_text"
+            android:layout_marginTop="@dimen/margin_activity_buy_food_text"
+            android:textSize="@dimen/size_activity_buy_food"
+            android:layout_height="wrap_content" />
+        <View
+            android:layout_below="@+id/tv_buy_food_name"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="@dimen/margin_activity_buy_food"
+            android:layout_marginRight="@dimen/margin_activity_buy_food"
+            android:layout_marginBottom="@dimen/margin_activity_buy_food"
+            android:layout_height="1dp"
+            android:background="@color/gray"/>
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/btn_add_location"
+        android:layout_below="@+id/panel_buy_food"
+        android:layout_width="200dp"
+        android:text="增加/选择 收货地址"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/size_activity_buy_food"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/margin_activity_buy_food"
+        android:layout_height="40dp" />
+    <EditText
+        android:id="@+id/et_location"
+        android:layout_marginLeft="@dimen/margin_activity_buy_food"
+        android:layout_marginRight="@dimen/margin_activity_buy_food"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/btn_add_location"
+        android:layout_height="40dp"
+        android:gravity="center|left"
+        android:textSize="@dimen/size_activity_buy_food"
+        android:hint="不使用默认地址"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="50dp">
+        <TextView
+            android:id="@+id/tv_money"
+            android:layout_width="0dp"
+            android:layout_weight="6"
+            android:text="一共费用"
+            android:gravity="center|left"
+            android:paddingLeft="@dimen/margin_activity_buy_food"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_activity_buy_food"
+            android:background="@color/light_black"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/btn_buy"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:text="支付"
+            android:textSize="@dimen/margin_activity_buy_food"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@color/green"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</RelativeLayout>

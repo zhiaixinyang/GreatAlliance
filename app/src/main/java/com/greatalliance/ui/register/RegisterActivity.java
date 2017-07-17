@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.support.annotation.MainThread;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
@@ -21,7 +20,7 @@ import com.avos.avoscloud.SignUpCallback;
 import com.greatalliance.R;
 import com.greatalliance.base.BaseActivity;
 import com.greatalliance.base.Constant;
-import com.greatalliance.model.User;
+import com.greatalliance.model.leancloud.User;
 import com.greatalliance.ui.MainActivity;
 import com.greatalliance.utils.AlbumUtils;
 import com.greatalliance.utils.AppUtils;
@@ -69,7 +68,6 @@ public class RegisterActivity extends BaseActivity {
 
         switch (requestCode) {
             case Constant.CROP_RESULT_CODE:
-                Log.d("aaa","sad");
                 String path = data.getStringExtra(Constant.RETURN_CLIP_PHOTO);
                 bmAvatar = BitmapFactory.decodeFile(path);
                 ivAvatar.setImageBitmap(bmAvatar);

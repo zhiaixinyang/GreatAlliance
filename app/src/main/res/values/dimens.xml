@@ -2,6 +2,10 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="main_toolbar_height">50dp</dimen>
+    <dimen name="toolbar_iv_wh">25dp</dimen>
+    <dimen name="toolbar_size">20sp</dimen>
+    <dimen name="toolbar_size_">14sp</dimen>
 
     <dimen name="margin_activity_login">20dp</dimen>
     <dimen name="et_height_activity_login">40dp</dimen>
@@ -12,6 +16,20 @@
     <dimen name="et_height_activity_register">40dp</dimen>
     <dimen name="size_activity_register">16sp</dimen>
     <dimen name="margin_activity_clip">10dp</dimen>
+    <dimen name="margin_item_shop">10dp</dimen>
+    <dimen name="margin_activity_buy_food">20dp</dimen>
+    <dimen name="size_activity_buy_food">18sp</dimen>
+    <dimen name="margin_activity_buy_food_text">10dp</dimen>
+
+    <dimen name="item_map_nearby_wh">80dp</dimen>
+    <dimen name="margin_item_map_nearby">15dp</dimen>
+    <dimen name="margin_item_map_nearby_small">5dp</dimen>
+    <dimen name="item_map_nearby_follower_wh">30dp</dimen>
+
+    <dimen name="frag_my_avatar_wh">80dp</dimen>
+    <dimen name="margin_frag_my">15dp</dimen>
+    <dimen name="size_frag_my">16sp</dimen>
+    <dimen name="frag_my_btn_edit_wh">28dp</dimen>
 
 
 </resources>
