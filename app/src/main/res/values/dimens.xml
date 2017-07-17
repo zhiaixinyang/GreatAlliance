@@ -21,5 +21,15 @@
     <dimen name="size_activity_buy_food">18sp</dimen>
     <dimen name="margin_activity_buy_food_text">10dp</dimen>
 
+    <dimen name="item_map_nearby_wh">80dp</dimen>
+    <dimen name="margin_item_map_nearby">15dp</dimen>
+    <dimen name="margin_item_map_nearby_small">5dp</dimen>
+    <dimen name="item_map_nearby_follower_wh">30dp</dimen>
+
+    <dimen name="frag_my_avatar_wh">80dp</dimen>
+    <dimen name="margin_frag_my">15dp</dimen>
+    <dimen name="size_frag_my">16sp</dimen>
+    <dimen name="frag_my_btn_edit_wh">28dp</dimen>
+
 
 </resources>

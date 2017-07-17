@@ -1,6 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</LinearLayout>
+    <com.greatalliance.widget.CircleImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="@dimen/item_map_nearby_wh"
+        android:src="@drawable/icon_example"
+        android:layout_height="@dimen/item_map_nearby_wh"
+        android:layout_margin="@dimen/margin_item_map_nearby" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:text="用户昵称"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:layout_marginTop="@dimen/margin_item_map_nearby_small"
+        android:layout_toRightOf="@+id/iv_avatar"
+        android:layout_alignTop="@+id/iv_avatar"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_location"
+        android:layout_width="wrap_content"
+        android:text="当前位置"
+        android:textColor="@color/main_color"
+        android:textSize="12sp"
+        android:layout_toRightOf="@+id/iv_avatar"
+        android:layout_below="@+id/tv_name"
+        android:layout_marginTop="@dimen/margin_item_map_nearby_small"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tv_distance"
+        android:layout_width="wrap_content"
+        android:text="0.3距离"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginTop="@dimen/margin_item_map_nearby_small"
+        android:layout_marginRight="@dimen/margin_item_map_nearby"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/iv_avatar"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="FOLLOWERS"
+        android:textColor="@color/gray_black"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_alignTop="@+id/tv_location"
+        android:layout_marginRight="@dimen/margin_item_map_nearby"
+        android:layout_alignParentRight="true"
+        android:layout_height="wrap_content" />
+    <com.greatalliance.widget.CircleImageView
+        android:id="@+id/iv_avatar_follower"
+        android:src="@drawable/icon_example"
+        android:layout_toLeftOf="@+id/panel_followers"
+        android:layout_alignBottom="@+id/iv_avatar"
+        android:layout_width="@dimen/item_map_nearby_follower_wh"
+        android:layout_height="@dimen/item_map_nearby_follower_wh" />
+    <RelativeLayout
+        android:id="@+id/panel_followers"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/margin_item_map_nearby"
+        android:layout_alignBottom="@+id/iv_avatar"
+        android:layout_width="@dimen/item_map_nearby_follower_wh"
+        android:layout_height="@dimen/item_map_nearby_follower_wh">
+        <com.greatalliance.widget.CircleImageView
+            android:src="@drawable/circle_gray"
+            android:layout_width="@dimen/item_map_nearby_follower_wh"
+            android:layout_height="@dimen/item_map_nearby_follower_wh" />
+        <TextView
+            android:id="@+id/tv_followers_num"
+            android:layout_width="wrap_content"
+            android:text="+99"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</RelativeLayout>

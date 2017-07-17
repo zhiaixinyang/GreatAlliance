@@ -1,6 +1,7 @@
 package com.greatalliance.model.leancloud;
 
 import com.avos.avoscloud.AVFile;
+import com.avos.avoscloud.AVGeoPoint;
 import com.avos.avoscloud.AVUser;
 
 /**
@@ -11,12 +12,21 @@ public class User extends AVUser {
     private String name;
     private String signature;
     private AVFile avatar;
+    private AVGeoPoint location;
     private int charm;
     private int fans;
     private int money;
 
     public int getCharm() {
         return getInt("charm");
+    }
+
+    public AVGeoPoint getLocation() {
+        return getAVGeoPoint("location");
+    }
+
+    public void setLocation(AVGeoPoint location) {
+        put("location",location);
     }
 
     public void setCharm(int charm) {
