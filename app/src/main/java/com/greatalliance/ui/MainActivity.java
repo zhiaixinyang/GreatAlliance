@@ -35,6 +35,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
 
     @Override
     public void initDatas() {
+        Log.d("aaaa","!!!!!!!!!!!!!!!!!!!!!!!!");
         if (SharedPreferencesUtils.getInstance().getInt(Constant.ACCOUNT_LOGIN_KEY)==1){
 
         }else{
