@@ -17,6 +17,6 @@
         android:title="分享" />
     <item
         android:id="@+id/menu_my"
-        android:icon="@drawable/icon_my"
+        android:icon="@drawable/icon_share"
         android:title="我的" />
 </menu>
