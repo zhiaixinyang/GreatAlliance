@@ -85,6 +85,9 @@ public class BuyFoodActivity extends BaseActivity {
                 startActivity(toLocation);
                 break;
             case R.id.btn_buy:
+                Intent toOrder=new Intent(BuyFoodActivity.this,OrderDetailActivity.class);
+                startActivity(toOrder);
+                finish();
                 break;
         }
     }
