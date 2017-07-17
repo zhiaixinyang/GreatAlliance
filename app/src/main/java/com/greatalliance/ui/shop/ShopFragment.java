@@ -48,22 +48,22 @@ public class ShopFragment extends BaseFragment {
         ShopBean shopBeanOne=new ShopBean();
         shopBeanOne.setFoodPhotoPath(R.drawable.icon_logo);
         shopBeanOne.setFoodContent("绝对美味");
-        shopBeanOne.setFoodMoeny("10");
-        shopBeanOne.setFoodName("AAAA");
+        shopBeanOne.setFoodMoeny("10元");
+        shopBeanOne.setFoodName("鸡排饭");
         data.add(shopBeanOne);
 
         ShopBean shopBeanTwo=new ShopBean();
         shopBeanTwo.setFoodPhotoPath(R.drawable.icon_logo);
         shopBeanTwo.setFoodContent("绝对美味");
-        shopBeanTwo.setFoodMoeny("10");
-        shopBeanTwo.setFoodName("BBBB");
+        shopBeanTwo.setFoodMoeny("10元");
+        shopBeanTwo.setFoodName("炒面");
         data.add(shopBeanTwo);
 
         ShopBean shopBeanThree=new ShopBean();
         shopBeanThree.setFoodPhotoPath(R.drawable.icon_logo);
         shopBeanThree.setFoodContent("绝对美味");
-        shopBeanThree.setFoodMoeny("10");
-        shopBeanThree.setFoodName("CCCC");
+        shopBeanThree.setFoodMoeny("10元");
+        shopBeanThree.setFoodName("水饺");
         data.add(shopBeanThree);
     }
 

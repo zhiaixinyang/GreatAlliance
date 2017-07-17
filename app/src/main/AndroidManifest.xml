@@ -49,6 +49,8 @@
             android:launchMode="singleTask"/>
         <activity android:name=".ui.shop.LocationActivity"
             android:launchMode="singleTask"/>
+        <activity android:name=".ui.shop.OrderDetailActivity"
+            android:launchMode="singleTask"/>
     </application>
 
 </manifest>
