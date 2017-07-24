@@ -70,6 +70,7 @@ public class ShopFragment extends BaseFragment {
     @Override
     public void configViews() {
         rlvShop.setLayoutManager(new LinearLayoutManager(AppUtils.getAppContext()));
+        rlvShop.addItemDecoration(new SpaceDecoration(15));
         rlvShop.setAdapter(new CommonAdapter<ShopBean>(AppUtils.getAppContext(),
                 R.layout.item_shop,data) {
             @Override

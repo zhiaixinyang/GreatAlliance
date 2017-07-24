@@ -20,9 +20,11 @@
         <attr name="paletteOffsetY" format="dimension" />
         <attr name="paletteShadowRadius" format="dimension" />
     </declare-styleable>
+
     <!-- 订单圆圈 -->
     <declare-styleable name="OrderStatusView">
         <attr name="dotColor_delivering" format="color"/>
         <attr name="dotColor_delivered" format="color" />
     </declare-styleable>
+
 </resources>

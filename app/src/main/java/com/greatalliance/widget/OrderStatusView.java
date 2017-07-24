@@ -16,7 +16,9 @@ import com.greatalliance.utils.ScreenUtils;
  * Created by 谷 聪聪 on 2017/7/15 0015.
  */
 
-public class OrderStatusView extends View {
+public class
+
+OrderStatusView extends View {
     /**
      * 订单量中状态：
      * 配送中 和 配送完成

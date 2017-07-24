@@ -17,6 +17,7 @@ import android.support.v7.graphics.Palette;
 import android.util.AttributeSet;
 import android.view.View;
 
+
 import com.greatalliance.R;
 
 import java.lang.ref.WeakReference;

@@ -34,6 +34,7 @@ public class MyFragment extends BaseFragment {
     @BindView(R.id.viewPager) ViewPager viewPager;
     private MyOrderFragment myOrderFragment;
     private MyShareFoodFragment myShareFoodFragment;
+    private MyInfoFragment myInfoFragment;
     private String[] titles;
 
     public static MyFragment newInstance() {
@@ -54,7 +55,8 @@ public class MyFragment extends BaseFragment {
     public void initDatas() {
         myOrderFragment=MyOrderFragment.newInstance();
         myShareFoodFragment=MyShareFoodFragment.newInstance();
-        titles= new String[]{"美食分享", "历史订单"};
+        myInfoFragment = MyInfoFragment.newInstance();
+        titles= new String[]{"美食分享", "历史订单", "我的信息"};
     }
 
     @Override
@@ -65,6 +67,7 @@ public class MyFragment extends BaseFragment {
                 if (position==0){
                     return myShareFoodFragment;
                 }
+                if (position == 2) return myInfoFragment;
                 return myOrderFragment;
             }
 

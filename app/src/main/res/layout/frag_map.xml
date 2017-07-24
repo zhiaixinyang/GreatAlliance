@@ -5,8 +5,8 @@
     <com.baidu.mapapi.map.MapView
         android:id="@+id/mapView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/rlv_map"
+        android:layout_height="270dp"
+        android:layout_alignParentTop="true"
         android:screenOrientation="portrait"
         android:clickable="true" />
     <android.support.v7.widget.RecyclerView
