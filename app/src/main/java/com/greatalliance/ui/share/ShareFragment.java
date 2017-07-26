@@ -1,11 +1,11 @@
 package com.greatalliance.ui.share;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -47,165 +47,44 @@ public class ShareFragment extends BaseFragment {
 
     @Override
     public void initDatas() {
-        SharerBean sharerOne = new SharerBean();
-        sharerOne.setAuthorHead(R.mipmap.head1);
-        sharerOne.setAuthorNick("哆啦A梦");
-        sharerOne.setAddOfArticle("齐鲁工业大学二食堂");
-        sharerOne.setArticleTitle("山西刀削面");
-        sharerOne.setArticleCover(R.mipmap.cover1);
-        datas.add(sharerOne);
-
-        SharerBean sharerTwo = new SharerBean();
-        sharerOne.setAuthorHead(R.mipmap.head2);
-        sharerOne.setAuthorNick("飞翔的企鹅");
-        sharerOne.setAddOfArticle("齐鲁工业大学三食堂");
-        sharerOne.setArticleTitle("红烧牛肉面");
-        sharerOne.setArticleCover(R.mipmap.cover2);
-        datas.add(sharerTwo);
-
-        SharerBean sharerThree = new SharerBean();
-        sharerOne.setAuthorHead(R.mipmap.head3);
-        sharerOne.setAuthorNick("且听风吟");
-        sharerOne.setAddOfArticle("齐鲁工业大学一食堂");
-        sharerOne.setArticleTitle("挪威的森林");
-        sharerOne.setArticleCover(R.mipmap.cover3);
-        datas.add(sharerThree);
-
-        SharerBean sharer4 = new SharerBean();
-        sharerOne.setAuthorHead(R.mipmap.head2);
-        sharerOne.setAuthorNick("飞翔的企鹅");
-        sharerOne.setAddOfArticle("齐鲁工业大学三食堂");
-        sharerOne.setArticleTitle("红烧牛肉面");
-        sharerOne.setArticleCover(R.mipmap.cover2);
-        datas.add(sharer4);
-
-        SharerBean sharer5 = new SharerBean();
-        sharerOne.setAuthorHead(R.mipmap.head3);
-        sharerOne.setAuthorNick("且听风吟");
-        sharerOne.setAddOfArticle("齐鲁工业大学一食堂");
-        sharerOne.setArticleTitle("挪威的森林");
-        sharerOne.setArticleCover(R.mipmap.cover3);
-        datas.add(sharer5);
-
-        SharerBean sharer6 = new SharerBean();
-        sharerOne.setAuthorHead(R.mipmap.head2);
-        sharerOne.setAuthorNick("飞翔的企鹅");
-        sharerOne.setAddOfArticle("齐鲁工业大学三食堂");
-        sharerOne.setArticleTitle("红烧牛肉面");
-        sharerOne.setArticleCover(R.mipmap.cover2);
-        datas.add(sharer6);
-
-        SharerBean sharer7 = new SharerBean();
-        sharerOne.setAuthorHead(R.mipmap.head3);
-        sharerOne.setAuthorNick("且听风吟");
-        sharerOne.setAddOfArticle("齐鲁工业大学一食堂");
-        sharerOne.setArticleTitle("挪威的森林");
-        sharerOne.setArticleCover(R.mipmap.cover3);
-        datas.add(sharer7);
-
-        SharerBean sharer8 = new SharerBean();
-        sharerOne.setAuthorHead(R.mipmap.head2);
-        sharerOne.setAuthorNick("飞翔的企鹅");
-        sharerOne.setAddOfArticle("齐鲁工业大学三食堂");
-        sharerOne.setArticleTitle("红烧牛肉面");
-        sharerOne.setArticleCover(R.mipmap.cover2);
-        datas.add(sharer8);
-
-        SharerBean sharer9 = new SharerBean();
-        sharerOne.setAuthorHead(R.mipmap.head3);
-        sharerOne.setAuthorNick("且听风吟");
-        sharerOne.setAddOfArticle("齐鲁工业大学一食堂");
-        sharerOne.setArticleTitle("挪威的森林");
-        sharerOne.setArticleCover(R.mipmap.cover3);
-        datas.add(sharer9);
-
-        SharerBean sharer10 = new SharerBean();
-        sharerOne.setAuthorHead(R.mipmap.head2);
-        sharerOne.setAuthorNick("飞翔的企鹅");
-        sharerOne.setAddOfArticle("齐鲁工业大学三食堂");
-        sharerOne.setArticleTitle("红烧牛肉面");
-        sharerOne.setArticleCover(R.mipmap.cover2);
-        datas.add(sharer10);
-
-        SharerBean sharer11 = new SharerBean();
-        sharerOne.setAuthorHead(R.mipmap.head3);
-        sharerOne.setAuthorNick("且听风吟");
-        sharerOne.setAddOfArticle("齐鲁工业大学一食堂");
-        sharerOne.setArticleTitle("挪威的森林");
-        sharerOne.setArticleCover(R.mipmap.cover3);
-        datas.add(sharer11);
-
-        SharerBean sharer12 = new SharerBean();
-        sharerOne.setAuthorHead(R.mipmap.head2);
-        sharerOne.setAuthorNick("飞翔的企鹅");
-        sharerOne.setAddOfArticle("齐鲁工业大学三食堂");
-        sharerOne.setArticleTitle("红烧牛肉面");
-        sharerOne.setArticleCover(R.mipmap.cover2);
-        datas.add(sharer12);
-
-        SharerBean sharer13 = new SharerBean();
-        sharerOne.setAuthorHead(R.mipmap.head3);
-        sharerOne.setAuthorNick("且听风吟");
-        sharerOne.setAddOfArticle("齐鲁工业大学一食堂");
-        sharerOne.setArticleTitle("挪威的森林");
-        sharerOne.setArticleCover(R.mipmap.cover3);
-        datas.add(sharer13);
-
-        SharerBean sharer14 = new SharerBean();
-        sharerOne.setAuthorHead(R.mipmap.head2);
-        sharerOne.setAuthorNick("飞翔的企鹅");
-        sharerOne.setAddOfArticle("齐鲁工业大学三食堂");
-        sharerOne.setArticleTitle("红烧牛肉面");
-        sharerOne.setArticleCover(R.mipmap.cover2);
-        datas.add(sharer14);
-
-        SharerBean sharer15 = new SharerBean();
-        sharerOne.setAuthorHead(R.mipmap.head3);
-        sharerOne.setAuthorNick("且听风吟");
-        sharerOne.setAddOfArticle("齐鲁工业大学一食堂");
-        sharerOne.setArticleTitle("挪威的森林");
-        sharerOne.setArticleCover(R.mipmap.cover3);
-        datas.add(sharer15);
-
-        SharerBean sharer16 = new SharerBean();
-        sharerOne.setAuthorHead(R.mipmap.head2);
-        sharerOne.setAuthorNick("飞翔的企鹅");
-        sharerOne.setAddOfArticle("齐鲁工业大学三食堂");
-        sharerOne.setArticleTitle("红烧牛肉面");
-        sharerOne.setArticleCover(R.mipmap.cover2);
-        datas.add(sharer16);
-
-        SharerBean sharer17 = new SharerBean();
-        sharerOne.setAuthorHead(R.mipmap.head3);
-        sharerOne.setAuthorNick("且听风吟");
-        sharerOne.setAddOfArticle("齐鲁工业大学一食堂");
-        sharerOne.setArticleTitle("挪威的森林");
-        sharerOne.setArticleCover(R.mipmap.cover3);
-        datas.add(sharer17);
-
-        SharerBean sharer18 = new SharerBean();
-        sharerOne.setAuthorHead(R.mipmap.head1);
-        sharerOne.setAuthorNick("哆啦A梦");
-        sharerOne.setAddOfArticle("齐鲁工业大学二食堂");
-        sharerOne.setArticleTitle("山西刀削面");
-        sharerOne.setArticleCover(R.mipmap.cover1);
-        datas.add(sharer18);
-
-        SharerBean sharer19 = new SharerBean();
-        sharerOne.setAuthorHead(R.mipmap.head2);
-        sharerOne.setAuthorNick("飞翔的企鹅");
-        sharerOne.setAddOfArticle("齐鲁工业大学三食堂");
-        sharerOne.setArticleTitle("红烧牛肉面");
-        sharerOne.setArticleCover(R.mipmap.cover2);
-        datas.add(sharer19);
-
-//        SharerBean sharerFour = new SharerBean();
-//        sharerOne.setAuthorHead(R.mipmap.head1);
-//        sharerOne.setAuthorNick("Tom");
-//        sharerOne.setAddOfArticle("Amarica");
-//        sharerOne.setArticleTitle("<Title>");
-//        sharerOne.setArticleCover(R.mipmap.ic_launcher);
-//        datas.add(sharerFour);
+        datas.add(new SharerBean(R.mipmap.cover1, "震惊！XX大学生竟然。。", R.mipmap.head1
+                , "齐鲁工业大学", "野比大雄"));
+        datas.add(new SharerBean(R.mipmap.cover2, "我靠！！一对情侣旁若无人竟然。。", R.mipmap.head2
+                , "上冻中医药大学", "张三"));
+        datas.add(new SharerBean(R.mipmap.cover3, "长见识了！这东西还有如此妙用！？", R.mipmap.head3
+                , "山东交通学院", "李四"));
+        datas.add(new SharerBean(R.mipmap.cover1, "震惊！XX大学生竟然。。", R.mipmap.head1
+                , "上冻女子学院", "李逵"));
+        datas.add(new SharerBean(R.mipmap.cover2, "我靠！！一对情侣旁若无人竟然。。", R.mipmap.head2
+                , "上冻中医药大学", "张三"));
+        datas.add(new SharerBean(R.mipmap.cover3, "长见识了！这东西还有如此妙用！？", R.mipmap.head3
+                , "山东交通学院", "李四"));
+        datas.add(new SharerBean(R.mipmap.cover1, "震惊！XX大学生竟然。。", R.mipmap.head1
+                , "上冻女子学院", "李逵"));
+        datas.add(new SharerBean(R.mipmap.cover2, "我靠！！一对情侣旁若无人竟然。。", R.mipmap.head2
+                , "上冻中医药大学", "张三"));
+        datas.add(new SharerBean(R.mipmap.cover3, "长见识了！这东西还有如此妙用！？", R.mipmap.head3
+                , "山东交通学院", "李四"));
+        datas.add(new SharerBean(R.mipmap.cover1, "震惊！XX大学生竟然。。", R.mipmap.head1
+                , "上冻女子学院", "李逵"));
+        datas.add(new SharerBean(R.mipmap.cover2, "我靠！！一对情侣旁若无人竟然。。", R.mipmap.head2
+                , "上冻中医药大学", "张三"));
+        datas.add(new SharerBean(R.mipmap.cover3, "长见识了！这东西还有如此妙用！？", R.mipmap.head3
+                , "山东交通学院", "李四"));
+        datas.add(new SharerBean(R.mipmap.cover1, "震惊！XX大学生竟然。。", R.mipmap.head1
+                , "上冻女子学院", "李逵"));
+        datas.add(new SharerBean(R.mipmap.cover2, "我靠！！一对情侣旁若无人竟然。。", R.mipmap.head2
+                , "上冻中医药大学", "张三"));
+        datas.add(new SharerBean(R.mipmap.cover3, "长见识了！这东西还有如此妙用！？", R.mipmap.head3
+                , "山东交通学院", "李四"));
+        datas.add(new SharerBean(R.mipmap.cover1, "震惊！XX大学生竟然。。", R.mipmap.head1
+                , "上冻女子学院", "李逵"));
+        datas.add(new SharerBean(R.mipmap.cover2, "我靠！！一对情侣旁若无人竟然。。", R.mipmap.head2
+                , "上冻中医药大学", "张三"));
+        datas.add(new SharerBean(R.mipmap.cover3, "长见识了！这东西还有如此妙用！？", R.mipmap.head3
+                , "山东交通学院", "李四"));
+        datas.add(new SharerBean(R.mipmap.cover1, "震惊！XX大学生竟然。。", R.mipmap.head1
+                , "上冻女子学院", "李逵"));
     }
 
     @Override
@@ -215,7 +94,7 @@ public class ShareFragment extends BaseFragment {
         rlv_share.setAdapter(new CommonAdapter<SharerBean>(AppUtils.getAppContext()
                 ,R.layout.item_share,datas) {
             @Override
-            public void convert(ViewHolder holder, final SharerBean sharerBean) {
+            public void convert(final ViewHolder holder, final SharerBean sharerBean) {
                 holder.setText(R.id.tv_author_nick, sharerBean.getAuthorNick());
                 holder.setText(R.id.tv_addOfArticle, sharerBean.getAddOfArticle());
                 holder.setText(R.id.tv_articleTitle, sharerBean.getArticleTitle());
@@ -223,6 +102,17 @@ public class ShareFragment extends BaseFragment {
                         ,sharerBean.getAuthorHead());
                 GlideUtils.load((ImageView) holder.getView(R.id.iv_articleCover)
                         , sharerBean.getArticleCover());
+                holder.getView(R.id.tv_author_nick).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent  = new Intent(getContext(),ContentOfShareActivity.class);
+                        Bundle data = new Bundle();
+                        data.putString("articleTitle", sharerBean.getArticleTitle());
+                        data.putInt("articleCover", sharerBean.getArticleCover());
+                        intent.putExtras(data);
+                        startActivity(intent, ActivityOptionsCompat.makeSceneTransitionAnimation(getSupportActivity(), holder.getView(R.id.iv_articleCover), "share_img").toBundle());
+                    }
+                });
             }
         });
     }

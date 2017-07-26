@@ -33,6 +33,7 @@
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="C0Bfe8ryADaCHyyVWffD66gvgIZGLdRi" />
+
         <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -50,6 +51,8 @@
         <activity android:name=".ui.shop.LocationActivity"
             android:launchMode="singleTask"/>
         <activity android:name=".ui.shop.OrderDetailActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".ui.share.ContentOfShareActivity"
             android:launchMode="singleTask"/>
     </application>
 

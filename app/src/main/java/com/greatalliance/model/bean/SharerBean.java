@@ -4,8 +4,21 @@ package com.greatalliance.model.bean;
  * Created by 谷 聪聪 on 2017/7/18 0018.
  */
 
-public class SharerBean {
+public class SharerBean  {
     private int articleCover;
+    private int authorHead;
+    private String articleTitle;
+    private String addOfArticle;
+    private String authorNick;
+
+    public SharerBean(int articleCover, String articleTitle, int authorHead
+            , String addOfArticle, String authorNick) {
+        this.articleCover = articleCover;
+        this.articleTitle = articleTitle;
+        this.authorHead = authorHead;
+        this.addOfArticle = addOfArticle;
+        this.authorNick = authorNick;
+    }
 
     public int getAuthorHead() {
         return authorHead;
@@ -15,10 +28,6 @@ public class SharerBean {
         this.authorHead = authorHead;
     }
 
-    private int authorHead;
-    private String articleTitle;
-    private String addOfArticle;
-    private String authorNick;
 
     public int getArticleCover() {
         return articleCover;
