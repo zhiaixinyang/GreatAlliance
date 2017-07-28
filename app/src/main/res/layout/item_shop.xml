@@ -48,7 +48,7 @@
                 android:layout_height="wrap_content" />
             <TextView
                 android:id="@+id/btn_buy"
-                android:background="@color/main_color"
+                android:background="@drawable/gradient_17ead9to6078ea_bg"
                 android:text="购买"
                 android:textSize="16sp"
                 android:textColor="@color/white"

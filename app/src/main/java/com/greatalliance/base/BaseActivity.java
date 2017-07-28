@@ -45,14 +45,16 @@ public abstract class BaseActivity extends AppCompatActivity {
     private boolean mNowMode;
     protected WaitNetPopupWindowUtils waitNetPopupWindowUtils;
 
+    //private boolean pendingIntroAnim;//Activity动画播放标志,下文中有一get方法供子类使用。
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getWindow().setFormat(PixelFormat.TRANSLUCENT);
-
+        //if (savedInstanceState == null) pendingIntroAnim = true;
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
         ButterKnife.bind(this);
-        setStatusBarColor();
+        //setStatusBarColor();
 
         mContext = this;
         waitNetPopupWindowUtils=new WaitNetPopupWindowUtils();
@@ -84,6 +86,11 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onDestroy();
         GreatAllianceApplication.getInstance().removeActivity(this);
     }
+
+
+//    public boolean getPendingIntroAnim(){
+//
+//    }
 
     public abstract int getLayoutId();
 

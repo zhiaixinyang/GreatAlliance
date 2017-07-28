@@ -34,7 +34,8 @@
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="C0Bfe8ryADaCHyyVWffD66gvgIZGLdRi" />
 
-        <activity android:name=".ui.MainActivity">
+        <activity android:name=".ui.MainActivity"
+            android:theme="@style/MainTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -53,6 +54,10 @@
         <activity android:name=".ui.shop.OrderDetailActivity"
             android:launchMode="singleTask"/>
         <activity android:name=".ui.share.ContentOfShareActivity"
+            android:theme="@style/AppTheme.ContentOfShareActivity"
+            android:launchMode="singleTask"/>
+        <activity android:name=".ui.my.MyProfileActivity"
+            android:theme="@style/AppTheme.MyProfileActivity"
             android:launchMode="singleTask"/>
     </application>
 

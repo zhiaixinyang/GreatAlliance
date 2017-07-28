@@ -1,64 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView
+    android:id="@+id/card_item_share"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardBackgroundColor="@color/white"
+    android:layout_margin="5dp"
     app:cardElevation="10dp"
-    app:cardCornerRadius="5dp"
-    android:minHeight="160dp">
-    <RelativeLayout
+    app:cardCornerRadius="5dp">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <com.greatalliance.widget.CircleImageView
-            android:id="@+id/civ_author_head"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_margin="5dp"
-            android:elevation="2dp"
-            android:src="@mipmap/ic_launcher"/>
-        <TextView
-            android:id="@+id/tv_author_nick"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white">
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_toRightOf="@id/civ_author_head"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="5dp"
-            android:textColor="@color/black"/>
-        <TextView
-            android:id="@+id/tv_addOfArticle"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_toRightOf="@id/civ_author_head"
-            android:layout_below="@id/tv_author_nick"
-            android:layout_marginLeft="5dp"
-            android:text="95 齐鲁工业大学图书馆"/>
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/civ_author_head">
-
-            <ImageView
+            android:layout_height="wrap_content">
+            <com.greatalliance.widget.ScaleImageView
                 android:id="@+id/iv_articleCover"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:transitionName="share_img"
-                android:maxHeight="200dp"
-                android:scaleType="fitCenter"/>
-
+                android:scaleType="fitXY" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/gradient_7f000000to00ffffff_bg"/>
+            <com.greatalliance.widget.CircleImageView
+                android:id="@+id/civ_author_head"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:civ_border_width="1dp"
+                app:civ_border_color="@color/white"
+                android:layout_gravity="top|start"
+                android:layout_margin="5dp"
+                android:src="@mipmap/ic_launcher"/>
+            <TextView
+                android:id="@+id/tv_author_nick"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/civ_author_head"
+                android:layout_marginTop="5dp"
+                android:gravity="start"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/tv_addOfArticle"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_below="@id/tv_author_nick"
+                android:layout_toRightOf="@id/civ_author_head"
+                android:text="95 齐鲁工业大学图书馆"
+                android:textColor="@color/black"/>
             <TextView
                 android:id="@+id/tv_articleTitle"
                 android:text="TextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textStyle="bold"
-                android:shadowColor="@color/black"
-                android:shadowRadius="1"
-                android:shadowDx="1"
-                android:shadowDy="1"
-                android:layout_gravity="center" />
-        </FrameLayout>
-    </RelativeLayout>
+                android:layout_alignParentBottom="true"
+                android:textColor="@color/white"/>
+        </RelativeLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textColor="@color/colorPrimary"
+            android:layout_margin="5dp"
+            android:text="阅读量:998"/>
+    </LinearLayout>
 </android.support.v7.widget.CardView>

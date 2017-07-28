@@ -18,6 +18,8 @@ package com.greatalliance.utils;
 import android.content.Context;
 import android.widget.Toast;
 
+import com.greatalliance.R;
+
 /**
  * Created by MBENBEN on 2017/7/9.
  */
@@ -79,5 +81,14 @@ public class ToastUtils {
 
     public static Toast getToast(String text, int duration) {
         return Toast.makeText(context, text, duration);
+    }
+
+    /**
+     * 自定义Toast
+     */
+    public static void showMyToast(String msg, int duration){
+        mToast = Toast.makeText(context, msg, duration);
+        mToast.getView().setBackgroundResource(R.drawable.gradient_17ead9to6078ea_bg);
+        mToast.show();
     }
 }

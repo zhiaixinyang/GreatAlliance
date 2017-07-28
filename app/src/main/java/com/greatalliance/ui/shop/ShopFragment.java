@@ -2,10 +2,14 @@ package com.greatalliance.ui.shop;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.greatalliance.R;
 import com.greatalliance.base.BaseFragment;
@@ -15,6 +19,7 @@ import com.greatalliance.base.ViewHolder;
 import com.greatalliance.model.bean.ShopBean;
 import com.greatalliance.utils.AppUtils;
 import com.greatalliance.utils.GlideUtils;
+import com.greatalliance.utils.ToastUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -89,5 +94,11 @@ public class ShopFragment extends BaseFragment {
                 });
             }
         });
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        ToastUtils.showMyToast("OnViewCreated", Toast.LENGTH_SHORT);
     }
 }

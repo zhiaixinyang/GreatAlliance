@@ -1,9 +1,10 @@
 package com.greatalliance.ui.map;
 
 import android.Manifest;
+import android.animation.Animator;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ZoomControls;
@@ -24,6 +25,8 @@ import com.baidu.mapapi.model.LatLng;
 import com.greatalliance.R;
 import com.greatalliance.base.BaseFragment;
 import com.greatalliance.model.leancloud.User;
+import com.greatalliance.ui.my.MyProfileActivity;
+import com.greatalliance.widget.CircleImageView;
 
 import butterknife.BindView;
 import permissions.dispatcher.NeedsPermission;
@@ -37,12 +40,14 @@ public class MapFragment extends BaseFragment {
 
     @BindView(R.id.mapView)
     MapView mapView;
-    @BindView(R.id.rlv_map)
-    RecyclerView rlvMap;
+    @BindView(R.id.civ_my_head_map)
+    CircleImageView myHead;
+
     private BaiduMap baiduMap;
     //定位
     public LocationClient mLocationClient = null;
     public BDLocationListener myListener = new MyLocationListener();
+
 
     public static MapFragment newInstance() {
 
@@ -102,8 +107,46 @@ public class MapFragment extends BaseFragment {
                 .icon(bitmap);
         //在地图上添加Marker，并显示
         baiduMap.addOverlay(option);
+
+        initEvent();
     }
 
+    private void initEvent(){
+        onHeadClick();
+    }
+    private void onHeadClick(){
+        myHead.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Intent intent = new Intent(getContext(), MyProfileActivity.class);
+                myHead.animate()
+                        .translationX(300)
+                        .setDuration(300)
+                        .setListener(new Animator.AnimatorListener() {
+                            @Override
+                            public void onAnimationStart(Animator animation) {
+                                startActivity(intent);
+                                activity.overridePendingTransition(0, 0);
+                            }
+
+                            @Override
+                            public void onAnimationEnd(Animator animation) {
+                                myHead.setTranslationX(0);
+                            }
+
+                            @Override
+                            public void onAnimationCancel(Animator animation) {
+
+                            }
+
+                            @Override
+                            public void onAnimationRepeat(Animator animation) {
+
+                            }
+                        }).start();
+            }
+        });
+    }
     @NeedsPermission({Manifest.permission.ACCESS_COARSE_LOCATION,Manifest.permission.ACCESS_FINE_LOCATION})
     public void initLocation(){
         LocationClientOption option = new LocationClientOption();
@@ -182,7 +225,6 @@ public class MapFragment extends BaseFragment {
             //位置语义化信息:location.getLocationDescribe()
             // POI数据:location.getPoiList()
         }
-
         @Override
         public void onConnectHotSpotMessage(String s, int i) {
         }

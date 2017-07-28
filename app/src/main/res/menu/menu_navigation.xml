@@ -18,5 +18,5 @@
     <item
         android:id="@+id/menu_my"
         android:icon="@drawable/icon_my"
-        android:title="我的" />
+        android:title="我" />
 </menu>

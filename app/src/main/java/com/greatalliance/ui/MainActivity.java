@@ -1,13 +1,23 @@
 package com.greatalliance.ui;
 
+import android.animation.Animator;
 import android.content.Intent;
 import android.graphics.PixelFormat;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.animation.Animation;
+import android.widget.FrameLayout;
+import android.widget.Toast;
+import android.widget.ViewAnimator;
+
 import com.greatalliance.R;
 import com.greatalliance.base.BaseActivity;
 import com.greatalliance.base.Constant;
@@ -16,17 +26,30 @@ import com.greatalliance.ui.my.MyFragment;
 import com.greatalliance.ui.register.LoginActivity;
 import com.greatalliance.ui.share.ShareFragment;
 import com.greatalliance.ui.shop.ShopFragment;
+import com.greatalliance.utils.ScreenUtils;
 import com.greatalliance.utils.SharedPreferencesUtils;
+import com.greatalliance.utils.ToastUtils;
 
 import butterknife.BindView;
 
 public class MainActivity extends BaseActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
     @BindView(R.id.navigation) BottomNavigationView bottomNavigation;
+    @BindView(R.id.frag_content)
+    FrameLayout frameLayout;
+
     private MapFragment mapFragment;
     private ShopFragment shopFragment;
     private ShareFragment shareFragment;
     private MyFragment myFragment;
     private FragmentManager fragmentManager;
+
+    private boolean pendingIntroAnim;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (savedInstanceState == null) pendingIntroAnim = true;
+    }
 
     @Override
     public int getLayoutId() {
@@ -57,8 +80,8 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
         fragmentManager.beginTransaction()
                 .add(R.id.frag_content,mapFragment)
                 .commit();
-    }
 
+    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -146,5 +169,30 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
                 break;
         }
         return true;
+    }
+
+    private void startIntroAnim(){
+//        int bottomNavViewSize = ScreenUtils.dp2px(bottomNavigation.getHeight());
+//        bottomNavigation.setTranslationY(bottomNavViewSize);
+        bottomNavigation.setAlpha(0.5f);
+
+        bottomNavigation.animate()
+                .alpha(1f)
+                .setDuration(500)
+                .start();
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ToastUtils.showShort("MainActivity Destroy");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        startIntroAnim();
+        ToastUtils.showShort("MainActivity Resume");
     }
 }
